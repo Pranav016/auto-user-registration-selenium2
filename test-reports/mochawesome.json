@@ -1,0 +1,235 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-06-16T22:10:50.195Z",
+    "end": "2023-06-16T22:10:59.284Z",
+    "duration": 9089,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9c26de88-13e7-40c8-9115-0e6c935d1d6d",
+      "title": "",
+      "fullFile": "C:\\Users\\I527220\\Desktop\\Github\\auto-user-registration-selenium2\\registration.js",
+      "file": "\\registration.js",
+      "beforeHooks": [
+        {
+          "title": "\"before all\" hook in \"{root}\"",
+          "fullTitle": "\"before all\" hook in \"{root}\"",
+          "timedOut": false,
+          "duration": 7,
+          "state": null,
+          "speed": null,
+          "pass": false,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "driver = new webdriver.Builder().forBrowser('chrome').build();",
+          "err": {},
+          "uuid": "4b1c2390-2d1e-40e3-b820-f72263a4a24c",
+          "parentUUID": "9c26de88-13e7-40c8-9115-0e6c935d1d6d",
+          "isHook": true,
+          "skipped": false
+        }
+      ],
+      "afterHooks": [
+        {
+          "title": "\"after all\" hook in \"{root}\"",
+          "fullTitle": "\"after all\" hook in \"{root}\"",
+          "timedOut": false,
+          "duration": 303,
+          "state": null,
+          "speed": null,
+          "pass": false,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "await driver.quit();",
+          "err": {},
+          "uuid": "43f3379e-a217-420f-a5ea-2efcc8dfe356",
+          "parentUUID": "9c26de88-13e7-40c8-9115-0e6c935d1d6d",
+          "isHook": true,
+          "skipped": false
+        }
+      ],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c44f7ade-6d08-4614-ab09-4ccfbee463b8",
+          "title": "Test Successful registration",
+          "fullFile": "C:\\Users\\I527220\\Desktop\\Github\\auto-user-registration-selenium2\\registration.js",
+          "file": "\\registration.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Generate a valid username and add it to the user entity",
+              "fullTitle": "Test Successful registration Generate a valid username and add it to the user entity",
+              "timedOut": false,
+              "duration": 2,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var username = generateUsername();\nusername.should.have.length(10);\nuser.username = username;",
+              "err": {},
+              "uuid": "0af49c12-9c6b-4cfb-8bf5-051754044353",
+              "parentUUID": "c44f7ade-6d08-4614-ab09-4ccfbee463b8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Generate a valid password and add it to the user entity",
+              "fullTitle": "Test Successful registration Generate a valid password and add it to the user entity",
+              "timedOut": false,
+              "duration": 1,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var password = generatePassword();\npassword.should.have.length(8);\nuser.password = password;",
+              "err": {},
+              "uuid": "0d25559f-e5fa-4d45-8c2b-5a500e375eb0",
+              "parentUUID": "c44f7ade-6d08-4614-ab09-4ccfbee463b8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Open up the website successfully",
+              "fullTitle": "Test Successful registration Open up the website successfully",
+              "timedOut": false,
+              "duration": 7001,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "user.username = generateUsername();\nuser.password = generatePassword();\nawait driver.get(url);\n// check caption\nconst captionElement = await driver.findElement(\n\tBy.className('caption')\n);\nconst caption = await captionElement.getText();\nassert.equal(caption, 'Experience the difference');\n// check footer message\nconst footerElement = await driver.findElement(\n\tBy.className('copyright')\n);\nconst footerText = await footerElement.getText();\nassert.equal(footerText, '© Parasoft. All rights reserved.');",
+              "err": {},
+              "uuid": "9f72ffda-d7c9-430c-afb9-2e4ca37a6d93",
+              "parentUUID": "c44f7ade-6d08-4614-ab09-4ccfbee463b8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check if successfully redirected to registration page",
+              "fullTitle": "Test Successful registration Check if successfully redirected to registration page",
+              "timedOut": false,
+              "duration": 488,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver\n\t.findElement(\n\t\tBy.xpath('/html/body/div[1]/div[3]/div[1]/div/p[2]/a')\n\t)\n\t.click();\nconst titleElement = await driver.findElement(\n\tBy.className('title')\n);\nconst title = await titleElement.getText();\nassert.equal(title, 'Signing up is easy!');",
+              "err": {},
+              "uuid": "16551586-6b82-4d59-ae81-3072193287e5",
+              "parentUUID": "c44f7ade-6d08-4614-ab09-4ccfbee463b8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check if user details are successfully filled",
+              "fullTitle": "Test Successful registration Check if user details are successfully filled",
+              "timedOut": false,
+              "duration": 695,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// check first name\nawait fillRegistrationDetails(driver, user);\nconst fnameElement = await driver.findElement(\n\tBy.id('customer.firstName')\n);\nconst fname = await fnameElement.getAttribute('value');\nassert.equal(fname, 'Test');\n// check city\nconst cityElement = await driver.findElement(\n\tBy.id('customer.address.city')\n);\nconst city = await cityElement.getAttribute('value');\nassert.equal(city, 'Bangalore');\n// check ssn number\nconst ssnElement = await driver.findElement(By.id('customer.ssn'));\nconst ssn = await ssnElement.getAttribute('value');\nassert.equal(ssn, '269');",
+              "err": {},
+              "uuid": "62410fb7-7933-46e4-8196-5903293e1d59",
+              "parentUUID": "c44f7ade-6d08-4614-ab09-4ccfbee463b8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check successful registration or not",
+              "fullTitle": "Test Successful registration Check successful registration or not",
+              "timedOut": false,
+              "duration": 467,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver\n\t.findElement(\n\t\tBy.xpath(\n\t\t\t'/html/body/div[1]/div[3]/div[2]/form/table/tbody/tr[13]/td[2]/input'\n\t\t)\n\t)\n\t.click();\nconst titleElement = await driver.findElement(By.css('h1.title'));\nconst title = await titleElement.getText();\nassert.equal(title, `Welcome ${user.username}`);\nconst loginMsg = await driver.findElement(\n\tBy.xpath('/html/body/div[1]/div[3]/div[2]/p')\n);\nconst loginDisplayed = await loginMsg.isDisplayed();\nassert.equal(\n\tloginDisplayed,\n\ttrue,\n\t'Login message does not exist on the page'\n);",
+              "err": {},
+              "uuid": "18c7447e-5240-4968-86b8-22ae41cb9d26",
+              "parentUUID": "c44f7ade-6d08-4614-ab09-4ccfbee463b8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0af49c12-9c6b-4cfb-8bf5-051754044353",
+            "0d25559f-e5fa-4d45-8c2b-5a500e375eb0",
+            "9f72ffda-d7c9-430c-afb9-2e4ca37a6d93",
+            "16551586-6b82-4d59-ae81-3072193287e5",
+            "62410fb7-7933-46e4-8196-5903293e1d59",
+            "18c7447e-5240-4968-86b8-22ae41cb9d26"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8654,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "C:\\Users\\I527220\\Desktop\\Github\\auto-user-registration-selenium2\\test-reports"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

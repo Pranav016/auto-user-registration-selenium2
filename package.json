@@ -1,0 +1,31 @@
+{
+	"name": "auto-user-registration-selenium2",
+	"version": "1.0.0",
+	"description": "",
+	"main": "runner.js",
+	"dependencies": {
+		"chai": "^4.3.7",
+		"chromedriver": "^114.0.2",
+		"mocha": "^10.2.0",
+		"selenium-webdriver": "^4.10.0"
+	},
+	"devDependencies": {
+		"mochawesome": "^7.1.3",
+		"nodemon": "^2.0.22"
+	},
+	"scripts": {
+		"start": "nodemon runner.js",
+		"test": "mocha registration.js --no-timeouts --reporter mochawesome --reporter-options reportDir=C:\\Users\\I527220\\Desktop\\Github\\auto-user-registration-selenium2\\test-reports"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Pranav016/auto-user-registration-selenium2.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Pranav016/auto-user-registration-selenium2/issues"
+	},
+	"homepage": "https://github.com/Pranav016/auto-user-registration-selenium2#readme"
+}

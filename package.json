@@ -15,7 +15,7 @@
 	},
 	"scripts": {
 		"start": "nodemon runner.js",
-		"test": "mocha registration.js --no-timeouts --reporter mochawesome --reporter-options reportDir=C:\\Users\\I527220\\Desktop\\Github\\auto-user-registration-selenium2\\test-reports"
+		"test": "mocha runner.js --no-timeouts --reporter mochawesome --reporter-options reportDir=C:\\Users\\I527220\\Desktop\\Github\\auto-user-registration-selenium2\\test-reports"
 	},
 	"repository": {
 		"type": "git",

@@ -1,19 +1,17 @@
 const webdriver = require('selenium-webdriver');
 var assert = require('assert');
+const { describe, it } = require('mocha');
+const chai = require('chai');
 const {
 	generateUserName: generateUsername,
 } = require('./util/generateUserName');
 const { generatePassword } = require('./util/generatePassword');
 const { dummy_user: user } = require('./entities/user');
 const { By } = webdriver;
-const { describe, it } = require('mocha');
-const chai = require('chai');
-
-const url = 'https://parabank.parasoft.com/parabank/index.htm';
 const should = chai.should();
 let driver;
 
-const registration = async (driver, url) => {
+const registration = async (url) => {
 	before(async () => {
 		driver = new webdriver.Builder().forBrowser('chrome').build();
 	});
@@ -31,7 +29,7 @@ const registration = async (driver, url) => {
 			password.should.have.length(8);
 			user.password = password;
 		});
-		it('Open up the website successfully', async function () {
+		it('Check if Website opened up successfully', async function () {
 			user.username = generateUsername();
 			user.password = generatePassword();
 			await driver.get(url);
@@ -135,6 +133,4 @@ const fillRegistrationDetails = async (driver, user) => {
 	await driver.findElement(By.id('repeatedPassword')).sendKeys(user.password);
 };
 
-// module.exports = registration;
-
-registration(driver, url);
+module.exports = registration;
